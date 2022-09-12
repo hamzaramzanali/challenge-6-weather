@@ -1,4 +1,5 @@
 .jumbotron {
+    display: flex;
     align-items: center;
     background-color: darkblue;
     color: white;
@@ -11,5 +12,6 @@
 }
 
 .display {
-    align-items: center;
+    margin-left: 250px;
+    font-size: 500%;
 }
