@@ -1,0 +1,15 @@
+.jumbotron {
+    align-items: center;
+    background-color: darkblue;
+    color: white;
+    height: 50px;
+}
+
+.card {
+    margin-left: 10px;
+
+}
+
+.display {
+    align-items: center;
+}
