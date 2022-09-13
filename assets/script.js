@@ -5,10 +5,14 @@ var historyList = JSON.parse(localStorage.getItem("history")) || []
 var searchHistoryEl = document.querySelector('#search-history')
 
 formEl.addEventListener("submit", function(event) {
+    if (!textinputEl.value){
+        return
+    }
     event.preventDefault()
 
-    var usercity = textinputEl.value
+    var usercity = textinputEl.value.trim()
     getCoordinates(usercity);
+    textinputEl.value = ""
 })
 
 
@@ -23,7 +27,7 @@ fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${usercity}&limt=1&appid=$
     var lon = data[0].lon
     var name = data[0].name
     getWeather(lat,lon)
-    saveLocalStorage(name)
+    saveLocalStorage(usercity)
 });
 }
 
@@ -39,8 +43,12 @@ function getWeather(lat,lon){
     }
 
 function saveLocalStorage(name){
+    if (historyList.indexOf(name) !== -1){
+        return
+    }
     historyList.push(name)
     localStorage.setItem('history', JSON.stringify(historyList))
+    renderSearchHistory()
 }
     
 function getSearchHistory(){
@@ -63,7 +71,15 @@ function renderSearchHistory(){
     }
 }
 
-// function handleSearchHistory(e){
-//     e.preventDefault()
-//     if (!e.target.matches(b))
-// }
+function handleSearchHistory(e){
+    if (!e.target.matches('.btn-history')){
+        return;
+    }
+    var btn = e.target
+    var search = btn.getAttribute('data-search')
+    getCoordinates(search)
+}
+
+renderSearchHistory()
+
+searchHistoryEl.addEventListener('click', handleSearchHistory)
