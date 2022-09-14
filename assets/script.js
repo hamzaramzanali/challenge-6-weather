@@ -34,16 +34,16 @@ fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${usercity}&limt=1&appid=
 
 function getWeather(lat,lon){
     console.log(lat,lon,appID)
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${appID}`)
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${appID}`)
     .then(function (response) {
         return response.json();
     })
     .then((data)=>{
     console.log(data);
-    // document.getElementById('temp').textContent = results.object.list.main.temp
-    // document.getElementById('wind').textContent = results.object.list.wind
-    // document.getElementById('humidity').textContent = results.object.list.main.humidity
-    // document.getElementById('weather').textContent = results.object.list.weather
+    document.getElementById('temp').textContent = results.object.list.main.temp
+    document.getElementById('wind').textContent = results.object.list.wind
+    document.getElementById('humidity').textContent = results.object.list.main.humidity
+    document.getElementById('weather').textContent = results.object.list.weather
 }).catch((error)=>{
     console.log(error);
 });
