@@ -40,10 +40,10 @@ function getWeather(lat,lon){
     })
     .then((data)=>{
     console.log(data);
-    document.getElementById('temp').textContent = results.object.list.main.temp
-    document.getElementById('wind').textContent = results.object.list.wind
-    document.getElementById('humidity').textContent = results.object.list.main.humidity
-    document.getElementById('weather').textContent = results.object.list.weather
+    // document.getElementById('temp').textContent = results.object.list.main.temp
+    // document.getElementById('wind').textContent = results.object.list.wind
+    // document.getElementById('humidity').textContent = results.object.list.main.humidity
+    // document.getElementById('weather').textContent = results.object.list.weather
 }).catch((error)=>{
     console.log(error);
 });
