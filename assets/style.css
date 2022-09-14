@@ -15,3 +15,11 @@
     margin-left: 250px;
     font-size: 500%;
 }
+
+#results {
+    position: relative;
+    width: 75%;
+    right: -300px;
+    top: -220px;
+    font-size: large;
+}

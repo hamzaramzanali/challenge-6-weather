@@ -3,6 +3,7 @@ var textinputEl = document.querySelector('#cityinput')
 var appID = "a5e8b6f890ce08796c7125320b836ba0"
 var historyList = JSON.parse(localStorage.getItem("history")) || []
 var searchHistoryEl = document.querySelector('#search-history')
+var resultsEl = document.querySelector('#results')
 
 formEl.addEventListener("submit", function(event) {
     if (!textinputEl.value){
@@ -37,10 +38,15 @@ function getWeather(lat,lon){
     .then(function (response) {
         return response.json();
     })
-        .then(function (data) {
-        console.log(data);
-        })
-    }
+    .then((data)=>{
+    console.log(data);
+    // document.getElementById('temp').textContent = value.main.temp
+    document.getElementById('wind').textContent = results.list.wind
+}).catch((error)=>{
+    console.log(error);
+});
+}
+
 
 function saveLocalStorage(name){
     if (historyList.indexOf(name) !== -1){
@@ -83,3 +89,5 @@ function handleSearchHistory(e){
 renderSearchHistory()
 
 searchHistoryEl.addEventListener('click', handleSearchHistory)
+
+

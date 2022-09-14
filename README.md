@@ -1,1 +1,2 @@
 # challenge-6-weather
+This assingment was designed to create a website that is used to allow a user to search for the weather in any city. The user should be allowed to see the current weather and the 5 day forecast. The application must store the user's inputs and allow the user to see their past inputs as a button. The button should then search again for the city's weather. 
