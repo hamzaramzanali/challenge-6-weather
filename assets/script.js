@@ -40,8 +40,10 @@ function getWeather(lat,lon){
     })
     .then((data)=>{
     console.log(data);
-    // document.getElementById('temp').textContent = value.main.temp
-    document.getElementById('wind').textContent = results.list.wind
+    document.getElementById('temp').textContent = results.object.list.main.temp
+    document.getElementById('wind').textContent = results.object.list.wind
+    document.getElementById('humidity').textContent = results.object.list.main.humidity
+    document.getElementById('weather').textContent = results.object.list.weather
 }).catch((error)=>{
     console.log(error);
 });
@@ -89,5 +91,3 @@ function handleSearchHistory(e){
 renderSearchHistory()
 
 searchHistoryEl.addEventListener('click', handleSearchHistory)
-
-
