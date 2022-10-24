@@ -18,7 +18,7 @@ formEl.addEventListener("submit", function (event) {
 
 
 function getCoordinates(usercity) {
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${usercity}&limt=1&appid=${appID}`)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${usercity}&limt=1&appid=${appID}`)
         .then(function (response) {
             return response.json();
         })
