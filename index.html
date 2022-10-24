@@ -1,44 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/style.css" />
-</head>
-<body>
-    <div class="jumbotron">
-        <div class="container">
-          <h1 class="display">Weather Dashboard</h1>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">Search for a City</h3>
-          <form id="form">
-            <div class="form-group">
-              <input type="text" class="form-control" id="cityinput">
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="searchBtn">Search</button>
-            </form>
-            <div id="search-history">
-            </div>
-        </div>
-      </div>
-      <div class="card" id="results">
-        <div class="card-body">
-          <p class="card-text">
-            <p id="temp">Temp:</p>
-            <p id="wind">Wind:</p>
-            <p id="humidity">Humidity:</p>
-            <p id="weather">Weather:</p>
-          </p>
-        </div>
-      </div>
 
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-<script src="./assets/script.js"></script>   
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display">Weather Dashboard</h1>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Search for a City</h3>
+      <form id="form">
+        <div class="form-group">
+          <input type="text" class="form-control" id="cityinput">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="searchBtn">Search</button>
+      </form>
+      <div id="search-history">
+      </div>
+    </div>
+  </div>
+  <div class="card" id="results">
+    <div class="card-body d-flex">
+      <div class="">
+        <p id="temp"></p>
+        <p id="wind"></p>
+        <p id="humidity"></p>
+        <p id="weather"></p>
+      </div>
+      <div>
+        <img src="" alt="" id="weatherImg">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h3>5-Day Forecast:</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="./assets/script.js"></script>
 </body>
+
 </html>
